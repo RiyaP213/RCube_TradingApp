@@ -4,6 +4,8 @@ import axios from "axios";
 import GeneralContext from "./GeneralContext";
 
 import "./BuyActionWindow.css";
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 const BuyActionWindow = ({ uid }) => {
   const generalContext = useContext(GeneralContext);
@@ -13,7 +15,7 @@ const BuyActionWindow = ({ uid }) => {
 
   const handleBuyClick = async () => {
     try {
-      await axios.post("http://localhost:3002/newOrder", {
+      await axios.post(`${API_URL}/newOrder`, {
         name: uid,
         qty: Number(stockQuantity),
         price: Number(stockPrice),

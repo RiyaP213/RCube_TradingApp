@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Orders = () => {
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allOrders")
+      .get(`${API_URL}/allOrders`)
       .then((res) => {
         console.log(res.data);
         setAllOrders(res.data);
