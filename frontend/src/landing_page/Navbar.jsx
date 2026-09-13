@@ -2,107 +2,116 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-    return (
-        <nav
-            className="navbar navbar-expand-lg border-bottom"
-            style={{ backgroundColor: "#FFF" }}
+  return (
+    <nav
+      className="navbar navbar-expand-lg border-bottom"
+      style={{ backgroundColor: "#FFF" }}
+    >
+      <div className="container p-2">
+
+        {/* Logo */}
+        <Link className="navbar-brand" to="/">
+          <img
+            src="/media/images/logo.svg"
+            style={{ width: "25%" }}
+            alt="Logo"
+          />
+        </Link>
+
+        {/* Mobile hamburger */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-            <div className="container p-2">
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-                {/* Logo */}
-                <Link className="navbar-brand" to="/">
-                    <img
-                        src="/media/images/logo.svg"
-                        style={{ width: "25%" }}
-                        alt="Logo"
-                    />
-                </Link>
+        {/* Navbar links */}
+        <div
+          className="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                {/* Mobile hamburger */}
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/signup"
+              >
+                Signup
+              </Link>
+            </li>
 
-                {/* Navbar links */}
-                <div
-                    className="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                >
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                to="/login"
+              >
+                Login
+              </Link>
+            </li>
 
-                        <li className="nav-item">
-                            <Link
-                                className="nav-link active"
-                                aria-current="page"
-                                to="/signup"
-                            >
-                                Signup
-                            </Link>
-                        </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                to="/about"
+              >
+                About
+              </Link>
+            </li>
 
-                        <li className="nav-item">
-                            <Link
-                                className="nav-link active"
-                                to="/about"
-                            >
-                                About
-                            </Link>
-                        </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                to="/products"
+              >
+                Products
+              </Link>
+            </li>
 
-                        <li className="nav-item">
-                            <Link
-                                className="nav-link active"
-                                to="/products"
-                            >
-                                Products
-                            </Link>
-                        </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                to="/pricing"
+              >
+                Pricing
+              </Link>
+            </li>
 
-                        <li className="nav-item">
-                            <Link
-                                className="nav-link active"
-                                to="/pricing"
-                            >
-                                Pricing
-                            </Link>
-                        </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                to="/support"
+              >
+                Support
+              </Link>
+            </li>
 
-                        <li className="nav-item">
-                            <Link
-                                className="nav-link active"
-                                to="/support"
-                            >
-                                Support
-                            </Link>
-                        </li>
+            {/* Menu icon */}
+            <li className="nav-item">
+              <span
+                className="nav-link active"
+                style={{ cursor: "pointer" }}
+              >
+                <i
+                  className="fa fa-bars"
+                  aria-hidden="true"
+                ></i>
+              </span>
+            </li>
 
-                        {/* Menu icon */}
-                        <li className="nav-item">
-                            <span
-                                className="nav-link active"
-                                style={{ cursor: "pointer" }}
-                            >
-                                <i
-                                    className="fa fa-bars"
-                                    aria-hidden="true"
-                                ></i>
-                            </span>
-                        </li>
+          </ul>
+        </div>
 
-                    </ul>
-                </div>
-
-            </div>
-        </nav>
-    );
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;
