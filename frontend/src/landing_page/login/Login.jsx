@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 function Login() {
@@ -23,7 +24,10 @@ function Login() {
       );
 
       setMessage(res.data.message || "Login successful");
-      console.log(res.data);
+
+      // Redirect to deployed dashboard after successful login
+      window.location.href =
+        "https://home-component.d3jmb0jj0qcekv.amplifyapp.com";
     } catch (err) {
       console.log(err);
 
